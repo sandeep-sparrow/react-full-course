@@ -6,7 +6,7 @@ import './ExpenseItem.css';
 
 function ExpenseItem(props){
 
-    const [expenseTitle, setExpenseTitle] = useState(props.expense.title);
+    const [expenseTitle, setExpenseTitle] = useState(props.title);
 
     const expenseDate = props.expense.date;
     let expenseAmount = props.expense.amount;
@@ -20,7 +20,7 @@ function ExpenseItem(props){
         <Card className="expense-item">
             <ExpenseDate date={expenseDate}/>       
             <div className="extense-item__description">
-                <h2>{expenseTitle}</h2>
+                <h2>{props.expense.title}</h2>
             </div>
             <div className="expense-item__price">${expenseAmount}</div>
             <button onClick={clickHandler}>Change Title</button>
