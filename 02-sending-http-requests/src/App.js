@@ -40,10 +40,6 @@ function App() {
     setIsLoading(false);
   }, []);
 
-  useEffect(() => {
-    fetchMoviesHandler();
-  }, [fetchMoviesHandler]);
-
   const addMovieHandler = useCallback(async (movie) => {
     console.log(movie);
     // title, openingText, releaseDate
@@ -61,6 +57,10 @@ function App() {
     }
     const data = await response.json();
     console.log(data);
+    fetchMoviesHandler();
+  }, [fetchMoviesHandler]);
+
+  useEffect(() => {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
 
